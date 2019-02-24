@@ -1,0 +1,41 @@
+/* global */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #fff;
+    color: $dark;
+    @include font-size(1.3, 2.1);
+    @extend .arial;
+}
+
+a { 
+    text-decoration: none;
+    color: $link;
+    
+    &:hover { 
+        @extend .hov;
+        color: $link;
+    }
+    
+    &:active {
+        @extend .act;
+        color: $link;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+h1 {
+    @include font-size(1.3, 2.1);
+}
+
+/* layout global */
+section {
+    width: 646px;
+    padding: 20px 0;
+    margin: $center;
+}

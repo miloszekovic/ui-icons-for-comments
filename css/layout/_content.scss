@@ -1,0 +1,172 @@
+article {
+    overflow: hidden;
+
+    .item-content-wrapper,
+    .item-menu,
+    .item-avatar,
+    .item-content,
+    .title h1,
+    .title span,
+    .emoji-reacted,
+    .emoji-reacted img,
+    .emoji-reacted strong,
+    .emoji-list,
+    .emoji-list img {
+        @extend .floating;
+    }
+
+    .item-content-wrapper {
+        width: 90%;
+        padding: 6px;
+
+        .item-avatar {
+            padding-right: 15px;
+
+            img {
+                width: 37px;
+                height: auto;
+                @include rounded-corners($full / 2);
+            }
+        }
+
+        .item-content {
+
+            .title span {
+                padding-left: 10px;
+                color: $base;
+            }
+
+            .emoji-wrapper {
+                padding-top: 3px;
+
+                .emoji-reacted,
+                .emoji-list {
+                    @include font-size(1.2, 1.3);
+                    padding: 3px 4px;
+                    height: 21px;
+                    border: 1px solid $light;
+                    @include rounded-corners(4px);
+                }
+
+                .emoji-reacted {
+                    margin-left: -2px;
+
+                    strong {
+                        font-weight: normal;
+                    }
+                }
+
+                .emoji-list {
+                    margin-left: 2px;
+                    padding: 4px 8px 4px 6px;
+                    width: 24px;
+                    position: relative;
+                    overflow: hidden;
+                    visibility: hidden; 
+                    opacity: 0; 
+                    @include transitions(all .5s);
+
+                    span {
+                        position: absolute;
+                        top: 4px;
+                    }
+
+                    ul {
+                        position: relative;
+
+                        li {
+                            @extend .floating;
+                            position: relative;
+                            @include transitions(all .5s);
+                            padding: 2px 1px 0; 
+                            bottom: -50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .item-menu {
+        width: 10%;
+        padding-top: 12px;
+        text-align: right;
+        
+        i {
+            padding: 0 6px;
+            @include font-size(1.6, 2);
+        }
+    }
+
+    &:hover {
+
+        .item-content-wrapper 
+        .item-content 
+        .emoji-wrapper 
+        .emoji-list {
+            visibility: visible; 
+            opacity: 1;
+            @include transitions(all .5s);
+
+            &:hover {
+                border: 1px solid #fff;
+                width: 163px;
+                height: 28px;
+                margin-top: -4px;
+                @include box-shadow(0 2px 4px 0 rgba(0,0,0,0.22));
+
+                span {
+                    top: -50px;
+                    @include transitions(1s);
+                }
+                
+                ul li {
+                    visibility: visible; 
+                    opacity: 1;
+                    bottom: 0;
+
+                    &:nth-child(1) {
+                        @include transitions(.2s);
+                    }
+
+                    &:nth-child(2) { 
+                        @include transitions(.4s);
+                    }
+
+                    &:nth-child(3) { 
+                        @include transitions(.6s);
+                    }
+                    
+                    &:nth-child(4) { 
+                        @include transitions(.8s);
+                    }
+                    
+                    &:nth-child(5) { 
+                        @include transitions(1s);
+                    }
+                    
+                    &:nth-child(6) { 
+                        @include transitions(1.2s);
+                    }
+                    
+                    &:nth-child(7) { 
+                        @include transitions(1.4s);
+                    }
+                    
+                    &:nth-child(8) { 
+                        @include transitions(1.6s);
+                    }
+
+                    a {
+                        display: block;
+                        @include transitions(all .35s);
+
+                        &:hover {
+                            margin-top: -3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

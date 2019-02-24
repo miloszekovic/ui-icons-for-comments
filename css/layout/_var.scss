@@ -1,0 +1,69 @@
+/* variables */
+$dark: #000;
+$base: #878787;
+$light: #d5d5d5;
+$link: #b0b4b6;
+$full: 100%;
+$center: 0 auto;
+
+/* mixing */
+.floating { 
+    display: inline-block;
+    vertical-align: top;
+}
+
+.hov { 
+    opacity: .8;
+    -moz-opacity: .8; 
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); 
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.act { 
+    opacity: .6; 
+    -moz-opacity: .6; 
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); 
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+@mixin box-shadow($size) {
+    -webkit-box-shadow: $size;
+    -moz-box-shadow: $size;
+    box-shadow: $size;
+}
+
+@mixin rounded-corners($size) {
+    border-radius: $size;
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+}
+
+@mixin transitions($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+/* fonts */
+@mixin font-size($size: 1.6, $line: $size * 1.5){
+    font-size: ($size * 10) + px;
+    line-height: ($line * 10) + px;
+    font-size: $size + rem;
+    line-height: $line + rem;
+}
+
+.arial {
+    font-family: Arial, sans-serif;
+}
